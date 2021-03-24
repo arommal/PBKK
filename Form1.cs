@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +14,10 @@ namespace CurrencyConverter
 {
     public partial class Form1 : Form
     {
-        double[] toRate = { 0.00045, 0.000058, 0, 0.000050, 0.078, 0.000070 };
+        string[] code = { "CNY", "EUR", "IDR", "GBP", "KRW", "USD"};
         public Form1()
         {
             InitializeComponent();
-            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,11 +32,24 @@ namespace CurrencyConverter
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            int index = cboxTo.SelectedIndex;
-            Object currency = cboxTo.SelectedItem;
-            double fromValue = double.Parse(txtFromValue.Text);
-            double toValue = fromValue * toRate[index];
-            txtToValue.Text = toValue.ToString();
+            var indexFrom = cboxFrom.SelectedIndex;
+            var indexTo = cboxTo.SelectedIndex;
+
+            var from = code[indexFrom];
+            var to = code[indexTo];
+            var amount = double.Parse(txtFromValue.Text);
+
+            var client = new RestClient($"https://free.currconv.com/api/v7/convert?q={from}_{to}&compact=ultra&apiKey=cfd890607153b25897e7");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+
+            var jObject = JObject.Parse(response.Content);
+
+            //Extracting Node element using Getvalue method
+            string rate = (jObject.GetValue($"{from}_{to}").ToString());
+            double rateDbl = double.Parse(rate);
+            txtToValue.Text = (rateDbl*amount).ToString();
         }
     }
 }

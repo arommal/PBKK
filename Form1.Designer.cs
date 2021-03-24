@@ -36,6 +36,8 @@ namespace CurrencyConverter
             this.txtToValue = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.cboxFrom = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // cboxTo
@@ -50,9 +52,9 @@ namespace CurrencyConverter
             "Pound sterling",
             "South Korean Won",
             "United States Dollar"});
-            this.cboxTo.Location = new System.Drawing.Point(398, 108);
+            this.cboxTo.Location = new System.Drawing.Point(295, 237);
             this.cboxTo.Name = "cboxTo";
-            this.cboxTo.Size = new System.Drawing.Size(191, 23);
+            this.cboxTo.Size = new System.Drawing.Size(137, 23);
             this.cboxTo.Sorted = true;
             this.cboxTo.TabIndex = 1;
             this.cboxTo.Text = "Choose currency";
@@ -62,7 +64,7 @@ namespace CurrencyConverter
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(190, 88);
+            this.label1.Location = new System.Drawing.Point(295, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 17);
             this.label1.TabIndex = 2;
@@ -73,7 +75,7 @@ namespace CurrencyConverter
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(398, 88);
+            this.label2.Location = new System.Drawing.Point(295, 217);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 17);
             this.label2.TabIndex = 3;
@@ -83,16 +85,16 @@ namespace CurrencyConverter
             // 
             this.txtFromValue.BackColor = System.Drawing.Color.Lavender;
             this.txtFromValue.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtFromValue.Location = new System.Drawing.Point(190, 156);
+            this.txtFromValue.Location = new System.Drawing.Point(295, 143);
             this.txtFromValue.Name = "txtFromValue";
-            this.txtFromValue.Size = new System.Drawing.Size(191, 35);
+            this.txtFromValue.Size = new System.Drawing.Size(200, 35);
             this.txtFromValue.TabIndex = 4;
             // 
             // txtToValue
             // 
             this.txtToValue.BackColor = System.Drawing.Color.GhostWhite;
             this.txtToValue.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtToValue.Location = new System.Drawing.Point(398, 156);
+            this.txtToValue.Location = new System.Drawing.Point(295, 266);
             this.txtToValue.Name = "txtToValue";
             this.txtToValue.Size = new System.Drawing.Size(191, 35);
             this.txtToValue.TabIndex = 5;
@@ -102,7 +104,7 @@ namespace CurrencyConverter
             this.btnSubmit.BackColor = System.Drawing.SystemColors.Control;
             this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSubmit.Location = new System.Drawing.Point(346, 255);
+            this.btnSubmit.Location = new System.Drawing.Point(357, 319);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 32);
             this.btnSubmit.TabIndex = 6;
@@ -113,11 +115,36 @@ namespace CurrencyConverter
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(190, 111);
+            this.label3.Location = new System.Drawing.Point(338, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 15);
+            this.label3.Size = new System.Drawing.Size(0, 15);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Indonesian Rupiah";
+            // 
+            // cboxFrom
+            // 
+            this.cboxFrom.DropDownWidth = 192;
+            this.cboxFrom.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cboxFrom.FormattingEnabled = true;
+            this.cboxFrom.Items.AddRange(new object[] {
+            "Chinese Yuan",
+            "Euro",
+            "Indonesian Rupiah",
+            "Pound sterling",
+            "South Korean Won",
+            "United States Dollar"});
+            this.cboxFrom.Location = new System.Drawing.Point(295, 114);
+            this.cboxFrom.Name = "cboxFrom";
+            this.cboxFrom.Size = new System.Drawing.Size(137, 23);
+            this.cboxFrom.Sorted = true;
+            this.cboxFrom.TabIndex = 8;
+            this.cboxFrom.Text = "Choose currency";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(295, 51);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker1.TabIndex = 9;
             // 
             // Form1
             // 
@@ -125,6 +152,8 @@ namespace CurrencyConverter
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.cboxFrom);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtToValue);
@@ -148,6 +177,8 @@ namespace CurrencyConverter
         private System.Windows.Forms.TextBox txtToValue;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboxFrom;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 
