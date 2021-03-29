@@ -37,7 +37,7 @@ namespace CurrencyConverter
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cboxFrom = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // cboxTo
@@ -139,12 +139,12 @@ namespace CurrencyConverter
             this.cboxFrom.TabIndex = 8;
             this.cboxFrom.Text = "Choose currency";
             // 
-            // dateTimePicker1
+            // datePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(295, 51);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 9;
+            this.datePicker.Location = new System.Drawing.Point(295, 51);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(200, 23);
+            this.datePicker.TabIndex = 9;
             // 
             // Form1
             // 
@@ -152,7 +152,7 @@ namespace CurrencyConverter
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.datePicker);
             this.Controls.Add(this.cboxFrom);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSubmit);
@@ -178,7 +178,7 @@ namespace CurrencyConverter
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboxFrom;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datePicker;
     }
 }
 
